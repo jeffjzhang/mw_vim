@@ -1,9 +1,13 @@
 syntax enable
 syntax on
+
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+"set noexpandtab
+"%retab!
 set autoindent
+
 set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s
 set nu
 let &termencoding=&encoding
@@ -22,13 +26,10 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
 filetype plugin indent on
 set completeopt=longest,menu
-set tags=tags
-set tags+=/home/zj/ggf/ggf/tags
-if has("win32")
-    set guifont=Courier_New:h10:cANSI
-    set guifontwide=YaHei\ Consolas\ Hybrid:h10
-endif
 au GUIEnter * simalt ~x
 nmap <silent> <F9> :lcd %:p:h<Bar>! /usr/local/php/bin/php -l  % <CR>
-map <F10> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q<CR><CR>
-nmap <silent> <F11> :%s/\s\+$//g<CR>
+"map <F10> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q<CR><CR>
+nmap <silent> <F10> :%s/\s\+$//g<CR>
+
+set listchars=tab:>-
+set list
